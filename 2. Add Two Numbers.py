@@ -10,7 +10,6 @@ class Solution:
         carry = 0
         lst1 = l1
         lst2 = l2
-        dummy.next = lst
         while lst1 or lst2 or carry != 0:
             num1 = lst1.val if lst1 else 0
             num2 = lst2.val if lst2 else 0
