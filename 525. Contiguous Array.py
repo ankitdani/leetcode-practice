@@ -12,9 +12,39 @@ class Solution:
             prefix_sum += num
             if prefix_sum in hashmap:
                 max_len = max(max_len, i - hashmap.get(prefix_sum))
+                print("i=", i)
             else:
                 hashmap[prefix_sum] = i
         return max_len
 
 # Time: O (n)
 # Space: O (n)
+"""
+-1,1,-1,1
+ |
+0 -> -1
+
+i = 0
+-1,1,-1,1
+ |
+-1 -> 0
+sum = -1
+
+i = 1
+-1,1,-1,1
+   |
+sum = 0
+res = 2
+
+i = 2
+-1,1,-1,1
+      |
+sum = -1
+res = 2-0=2
+
+i = 3
+-1,1,-1,1
+        |
+sum = 0
+res = 3-(-1)=4
+"""
