@@ -28,7 +28,7 @@ class Solution:
 
         '''
         1st pass = create a copy of all nodes in hashmap
-        2nd pass = assign random and next pointers to copies
+        2nd pass = assign random and next pointers 
         return copy of head
         '''
 

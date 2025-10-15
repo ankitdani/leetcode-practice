@@ -1,5 +1,7 @@
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
+        if len(s) < len(t):
+            return ""
         t_map = {}
         for ch in t:
             t_map[ch] = t_map.get(ch, 0) + 1
@@ -17,15 +19,19 @@ class Solution:
                     count += 1
             while count == len(t_map) and l <= r:
                 if (min_len > r-l+1):
-                    min_len = min(min_len, r-l+1)
+                    min_len =  r-l+1
                     start = l
                 l_ch = s[l]
                 if l_ch in t_map:
-                    s_map[l_ch] = s_map.get(l_ch, 0) - 1
+                    s_map[l_ch] = s_map.get(l_ch) - 1
+                    if s_map[l_ch] < t_map[l_ch]:
+                        count -= 1
                     if s_map[l_ch] <= 0:
                         del s_map[l_ch]
-                    if s_map[l_ch] != t_map[l_ch]:
-                        count -= 1
+                    
                 l += 1
             r += 1
-        return s[start : start + min_len]
+        return s[start : start + min_len] if min_len != len(s)+1 else ""
+
+# Time: O(m+n)
+# Space: O(m+n)
