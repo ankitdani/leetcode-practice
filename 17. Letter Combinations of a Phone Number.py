@@ -17,7 +17,7 @@ create a map: number -> list of letters
 
 
 Time: O(n * 4**n)
-Space: O(n 8 4**n)
+Space: O(n * 4**n)
 '''
 
 class Solution:
