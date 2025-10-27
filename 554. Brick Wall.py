@@ -6,10 +6,6 @@ Draw a vertical line from the top to the bottom and cross the least bricks. If y
 Given the 2D array wall that contains the information about the wall, return the minimum number of crossed bricks after drawing such a vertical line.
 '''
 
-'''
-
-'''
-
 class Solution:
     def leastBricks(self, wall: List[List[int]]) -> int:
         
