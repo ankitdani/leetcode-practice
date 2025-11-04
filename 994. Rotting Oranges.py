@@ -32,28 +32,29 @@ class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         rows = len(grid)
         cols = len(grid[0])
-        time = 0
         que = deque()
         fresh = 0
-        for i in range(rows):
-            for j in range(cols):
-                if grid[i][j] == 2:
-                    que.append((i,j))
-                elif grid[i][j] == 1:
+        for r in range(rows):
+            for c in range(cols):
+                if grid[r][c] == 2:
+                    que.append([r,c])
+                if grid[r][c] == 1:
                     fresh += 1
         if fresh == 0:
             return 0
         dx = [0,0,1,-1]
         dy = [1,-1,0,0]
+        time = 0
         while que and fresh > 0:
+            size = len(que)
             time += 1
-            for _ in range(len(que)):
+            for _ in range(size):
                 curr = que.popleft()
                 for i in range(4):
-                    new_r = curr[0] + dx[i]
-                    new_c = curr[1] + dy[i]
-                    if self.is_valid(grid, new_r, new_c) and grid[new_r][new_c] == 1:
-                        que.append((new_r, new_c))
-                        grid[new_r][new_c] = 2
-                        fresh -= 1
+                    new_x = dx[i] + curr[0]
+                    new_y = dy[i] + curr[1]
+                    if self.is_valid(grid, new_x, new_y) and grid[new_x][new_y] == 1:
+                        que.append([new_x, new_y])
+                        grid[new_x][new_y] = 2
+                        fresh -=1 
         return time if fresh == 0 else -1
