@@ -10,7 +10,7 @@ Return the minimum number of minutes that must elapse until no cell has a fresh 
 '''
 
 '''
-1 0 2
+0 0 2
 0 1 2
 result => 1
 
