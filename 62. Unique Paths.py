@@ -13,8 +13,8 @@ if start is reached, return 1
 if we are out of bounds, return 0
 cache the results
 
-Time: O()
-Space: O()
+Time: O(m * n)
+Space: O(m * n)
 '''
 
 class Solution:
