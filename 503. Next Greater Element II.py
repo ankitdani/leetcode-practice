@@ -16,7 +16,12 @@ result = [-1,-1,-1]
 i = 1
 stk = 0
 nums[stk[-1]] < nums[i] => 1 < 2
-result = [-]
+stk.pop()
+result = [2,-1,-1]
+
+i = 2
+stk =  empty
+stk = [1]
 
 
 Time: O(2 * n)
